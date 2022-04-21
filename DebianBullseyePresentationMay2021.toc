@@ -1,0 +1,6 @@
+\beamer@sectionintoc {1}{دبیان چیست؟}{3}{0}{1}
+\beamer@sectionintoc {2}{بررسی فنی}{6}{0}{2}
+\beamer@sectionintoc {3}{نقشه راه دبیان}{7}{0}{3}
+\beamer@sectionintoc {4}{برنامه‌ها}{12}{0}{4}
+\beamer@sectionintoc {6}{کمک و مطالعهٔ بیشتر}{20}{0}{5}
+\beamer@sectionintoc {7}{نتیجه‌گیری و اعتبار}{25}{0}{6}

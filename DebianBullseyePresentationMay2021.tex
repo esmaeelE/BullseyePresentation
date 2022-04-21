@@ -1,0 +1,884 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%https://www.overleaf.com/project/5ed908d3469f6e00013df854
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8 Unicode
+
+%----------------------------------------------------------------------------------------
+%  PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass[hyperref={colorlinks}]{beamer}
+\usepackage{multicol}
+\usepackage{comment}
+\usepackage{bookmark}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+%\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+%% Debian Logo
+\logo{\includegraphics[viewport=274 335 360
+  440,width=.5cm]{openlogo-nd.pdf}}
+
+% \definecolor{debianred}{rgb}{.780,.000,.211} % 199,0,54
+% \definecolor{debianblue}{rgb}{0,.208,.780} % 0,53,199
+% \definecolor{debianlightbackgroundblue}{rgb}{.941,.941,.957} % 240,240,244
+% \definecolor{debianbackgroundblue}{rgb}{.776,.784,.878} % 198,200,224
+
+% \usecolortheme[named=debianbackgroundblue]{structure}
+% \setbeamercolor{normal text}{fg=debianred}
+% \setbeamercolor{titlelike}{fg=debianblue}
+% \setbeamercolor{sidebar}{fg=debianred,bg=debianbackgroundblue}
+
+% \setbeamercolor{palette sidebar primary}{fg=debianred}
+% \setbeamercolor{palette sidebar secondary}{fg=debianred}
+% \setbeamercolor{palette sidebar tertiary}{fg=debianred}
+% \setbeamercolor{palette sidebar quaternary}{fg=debianred}
+
+% \setbeamercolor{section in toc}{fg=debianred}
+% \setbeamercolor{subsection in toc}{parent=debianred}
+
+% \setbeamercolor{item}{fg=debianred}
+
+% \setbeamercolor{block title}{fg=debianblue}
+
+\usepackage{adjustbox}
+\usepackage{tikz}
+\usetikzlibrary{patterns,arrows,matrix,chains,scopes}
+\usetikzlibrary{shapes.geometric,decorations.pathmorphing,fit,positioning}
+
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+%\usepackage[colorlinks=true]{hyperref}
+
+\usepackage[
+extrafootnotefeatures,
+localise=on,
+mathdigits=default,
+inlinemathdigits=default,
+displaymathdigits=default % persian
+]{xepersian}
+
+
+\settextfont{XB Niloofar}
+\setlatintextfont{Junicode}
+% چنانچه می‌خواهید اعداد در فرمول‌ها، انگلیسی باشد، خط زیر را غیرفعال کنید
+% و گزینهٔ displaymathdigits=persian را از خط ۱۰۹ حذف کنید.
+%\setdigitfont{XB Niloofar}
+% \setdigitfont{Junicode}
+% تعریف قلم‌های فارسی و انگلیسی اضافی برای استفاده در بعضی از قسمت‌های متن
+% \setmathsfdigitfont{XB Titre}
+\defpersianfont\titlefont{XB Titre}
+\deflatinfont\latintitlefont[Scale=1.1]{Junicode}
+%----------------------------------------------------------------------------------------
+%  TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Short title]{دبیان ۱۱ Bullseye} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+
+\author{Paul Sutton} % Paul Sutton
+\institute[Debian] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+	http://www.debian.org \\ % Your institution for the title page
+	
+	\medskip
+	\textit{paulsutton@disroot.org } % Your email address
+}
+\date{\today} % Date, can be changed to a custom date
+
+\begin{document}
+\begin{persian}
+	\begin{frame}
+	\titlepage % Print the title page as the first slide
+	\end{frame}
+\end{persian}
+
+\begin{persian}
+
+\begin{frame}{محتویات}
+\begin{block}{محتویات}
+	% Left column and width
+	\begin{multicols}{2}
+		\setcounter{tocdepth}{2}
+		\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+	\end{multicols}
+\end{block}
+\end{frame}
+\end{persian}
+
+%----------------------------------------------------------------------------------------
+%  PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+%------------------------------------------------
+\section{دبیان چیست؟} % 
+
+%------------------------------------------------
+
+%\subsection{Definition} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
+
+\begin{persian}
+\begin{frame}{دبیان چیست؟}
+\begin{block}{تعریف}
+\begin{itemize}		
+
+		\item \textbf{{توزیع دبیان}} 
+سیستم‌عاملی(OS) برای رایانهٔ شماست. 
+سیستم‌عامل مجموعه‌ای از برنامه‌های پایه‌ای و سایر ابزارهای لازم برای کار رایانه است. 
+		
+		\item 
+دبیان با همکاری جامعه‌ای از افراد سراسر جهان ساخته شده است.
+
+		\item 
+دبیان بر اساس اصول  \href{http://www.gnu.org}{پروژه گنو}، باز توسعه یافته و آزاد منتشر شده است.
+
+	    \item 
+دبیان از کرنل \href{http://www.linux.org}{لینوکس} به عنوان قلب سیستم‌عامل استفاده می‌کند.
+        \item 
+شما می‌توانید از دبیان استفاده‌ کنید آن را مطالعه کرده و تغییر دهید و تغییراتتان را با دیگران به اشتراک بگذارید.
+
+\end{itemize}
+\end{block}
+\end{frame}
+\end{persian}
+
+%------------------------------------------------
+\begin{comment}
+
+
+%\subsection{Free as in freedom}
+\begin{frame}{GNU Project}
+\begin{block}{The Four Freedoms }
+\begin{enumerate}
+\item  The freedom to run the program as you wish, for any purpose (freedom 0).
+\item The freedom to study how the program works, and change it so it does your computing as you wish (freedom 1). Access to the source code is a precondition for this.
+\item The freedom to redistribute copies so you can help others (freedom 2).
+\item The freedom to distribute copies of your modified versions to others (freedom 3). By doing this you can give the whole community a chance to benefit from your changes. Access to the source code is a precondition for this. (2)
+\end{enumerate}
+\end{block}
+\end{frame}
+\end{comment}
+%-----------------------
+
+\begin{persian}
+
+\begin{frame}{دبیان چیست؟}
+%\subsubsection{Free or non-free}
+\begin{block}{نرم‌افزارهای موجود در دبیان}
+	\begin{itemize}
+		\item \textbf{دبیان} تنها شامل نرم‌افزارهایی است که با توصیه نامهٔ نرم‌افزار آزاد سازگار هستند. این بخش \emph{main} نام دارد.
+		\item 
+نرم‌افزارهای open-source که به کدهای مالکیتی وابسته اند در \emph{contrib} می‌روند. این‌ها جزئی از دبیان \textbf{نیستند}.		
+
+		\item 
+نرم‌افزارهای مالکیتی(برای نمونه راه‌اندازهای پردازندهٔ گرافیکی) در \emph{non-free} هستند. این‌ها هم جزئی از دبیان \textbf{نیستند}.
+		
+	\end{itemize}
+\end{block}
+%\centerline{\url{https://www.debian.org/doc/manuals/debian-faq/ch-ftparchives\#s-stable}}
+\end{frame}
+
+\end{persian}
+
+%-----------------------------
+%\subsection{Using Debian}
+\begin{persian}
+	
+\begin{frame}{استفاده از دبیان}
+\begin{block}{با دبیان \emph{هرکاری}  می‌شود کرد:}
+\begin{itemize}
+	\item 
+دبیان با محیط‌های کاری مختلفی از رابط خط فرمان گرفته تا محیط کاملاً گرافیکی ارائه می‌شود.	
+
+	\item
+شامل ابزارهایی برای انجام دادن هر کاری است.
+دبیان بیش از ۶۸ هزار بسته‌ٔ نرم‌افزاری دارد که همه با یک فرمان نصب می‌شوند.
+	
+	\item
+دبیان برای همهٔ کاربران و کاربردها از میزکار یک کاربر معمولی تا سرورهای توسعه مناسب است.	
+	
+	\item
+دبیان پایدار، امن و سریع است.
+	
+\end{itemize}
+\end{block}
+\end{frame}
+%------------------------------------------------
+\end{persian}
+
+%------------------------------------------------
+\begin{comment}
+\subsection{Diversity Statement}
+\begin{frame}{Diversity Statement}
+\begin{block}{Diversity Statement}
+The Debian Project welcomes and encourages participation by everyone.\\
+\vspace{.25cm}
+No matter how you identify yourself or how others perceive you: we welcome you. We welcome contributions from everyone as long as they interact constructively with our community.\\
+\vspace{.25cm}
+While much of the work for our project is technical in nature, we value and encourage contributions from those with expertise in other areas, and welcome them into our community. \\
+\end{block}
+\centerline{\url{https://www.debian.org/intro/diversity}}
+\end{frame}
+\end{comment}
+%------------------------------------------------
+\begin{comment}
+
+\subsubsection{Code of conduct and related}
+
+\begin{frame}{Code of Conduct}
+\begin{block}{Code of Conduct}
+\centerline{\textbf{The diversity statement is also supported by:}}
+\vspace{.25cm}
+\textbf{Code of conduct}
+\centerline{\url{https://www.debian.org/code_of_conduct}}
+\textbf{Community Guidelines}
+\centerline{\url{https://people.debian.org/~enrico/dcg/}}
+\textbf{Anti-harassment team}
+\centerline{\url{https://wiki.debian.org/AntiHarassment}}
+\end{block}
+The Debian community is strongly committed to creating a space for everyone, that is open, safe and free from the risk of harm.
+\end{frame}
+\end{comment}
+
+%------------------------------------------------
+
+\begin{persian}
+\section{بررسی فنی}
+
+\begin{frame}{بررسی فنی}
+\begin{block}{}
+بررسی فنی
+\end{block}
+\end{frame}
+\end{persian}
+
+\begin{persian}
+%------------------------------------------------
+\section{نقشه راه دبیان}
+%\subsection{How Releases Work}
+\begin{frame}{نقشهٔ راه دبیان}
+
+\begin{block}{نام‌کدهای انتشار دبیان}
+\textbf{برنامهٔ انتشار: } 
+دبیان انتشار پایدارش را با برنامهٔ منظمی اعلام می‌کند.
+کاربران دبیان می‌توانند برای هر انتشار انتظار ۳ سال پشتیبانی کامل و ۲ سال پشتیبانی افزون‌تر(LTS) را داشته باشند.
+
+\begin{latin}
+\begin{itemize}
+
+\item Debian 10 - \textbf{Buster} – old stable (July 6, 2019)
+\item Debian 11 - \textbf{Bullseye} -  stable (2021)
+\item Debian 12  - \textbf{Bookworm} - testing (2023)
+%\item Debian 13 - \textbf{Trixie} - Future (2025)
+
+\end{itemize}
+\end{latin}
+
+
+
+
+\textbf{:Sid} انتشاری برای توسعه است.
+
+
+\textbf{ نام‌گذاری :}
+انتشارها از شخصیت‌های انیمیشن داستان اسباب‌بازی نام‌گذاری می‌شوند.
+
+\end{block}
+
+\end{frame}
+\end{persian}
+
+\begin{persian}
+\begin{frame}{انتشارها چگونه اند؟}
+\begin{figure}[ht]
+	\centering
+	\begin{adjustbox}{scale=0.7}
+		\begin{tikzpicture}[point/.style={coordinate},>=stealth',thick,draw=black!50!blue,
+		tip/.style={->}, revtip/.style={<-},
+		every join/.style={line width=5pt,color=black!50!blue,rounded corners=1cm},
+		nodebox/.style={rectangle,rounded corners=2mm,minimum size=1.5cm,very thick,
+			draw=blue!50!black,top color=white,bottom
+			color=black!40!blue!50},
+		hv path/.style={to path={-| (\tikztotarget)}},
+		vh path/.style={to path={|- (\tikztotarget)}},
+		ampersand replacement=\&]
+		\matrix[column sep=6mm,row sep=3mm,text width=2cm,align=center] {
+			% Primeira linha:
+			\begin{persian}
+			\node (newpkg) [nodebox] {بسته‌های تازه};		\end{persian}
+			 \& \& \& \&
+			\node (p8) [point] {}; \& \&
+			\node (p6) [point] {}; \& \\
+			% Segunda linha:
+			\node (p1) [point] {}; \&
+			\node (sid) [nodebox] {Sid (ناپایدار)}; \&
+			\node (p2) [point] {}; \&
+			\node (testing) [nodebox] {آزمایشی}; \&
+			\node (p3) [point] {}; \&
+			%          \node (p4) [point] {}; \&
+			\node (p5) [point] {}; \&
+			\node (stable) [nodebox] {پایدار}; \\
+			% Terceira linha:
+			\begin{persian}
+			\node (upgrades) [nodebox,text width=5cm] { نسخه‌های جدیدتر بسته‌های کنونی};
+			\end{persian} \&
+			\& \& \& \&
+			
+			\node (p7) [point] {}; \& \\
+		};
+		
+		%        \node (freeze) at (p6.north) [above] {\textbf{Freeze}};
+		
+		{ [start chain]
+			\chainin (sid);
+			{ [start branch=newpkg]
+				\chainin (newpkg) [join=by {hv path,revtip}];
+			}
+			{ [start branch=sid]
+				\chainin (upgrades) [join=by {hv path,revtip}];
+			}
+			\chainin (sid) [join];
+			\chainin (p2) [join];
+			\chainin (testing) [join=by tip];
+			\chainin (stable) [join=by tip];
+		}
+		
+		%        { [start chain]
+		%          \chainin (p6);
+		%          \chainin (p7) [join=by {dashed,ultra thick,color=black!50}];
+		%        }
+		
+		\node (continuous) [dashed,draw=red,yshift=-.3cm,fit=(sid) (p8) 
+		(p3)] {};
+		\node at (continuous.north) [above,xshift=-1.6cm,text width=3.3cm] {Continuous
+			process (until the Freeze)};
+		
+		%        \node (freeze) [dashed,draw=gray,fit=(testing) (p6) (p7)] {};
+		%        \node at (freeze.north) [above] {Freeze};
+		
+		\node (release) [dashed,draw=red,fit=(testing) (p6) (p7) (stable)] {};
+		\node at (release.north east)
+		[above,align=right,text width=2.5cm,xshift=-1.3cm] {Freeze
+			process; Release when RC Bugs $\rightarrow 0$};
+		
+		
+		\end{tikzpicture}
+	\end{adjustbox}
+	\caption{جریان بسته‌ها در چرخهٔ انتشار دبیان.}
+	\label{fig:pkgflow}
+\end{figure}
+\end{frame}
+\end{persian}
+
+%------------------------------------------------
+%\subsection{Technical Overview:}
+%------------------------------------------------
+\begin{persian}
+\begin{frame}{بررسی فنی}
+\begin{block}{اجزای اساسی}
+\begin{table}
+	\begin{latin}
+	\begin{tabular}{l l l}
+		\toprule
+		\textbf{Feature} & \textbf{Version} & \textbf{Note}\\
+		\midrule
+		Kernel & 5.10 series & Kernel of the Operating System \\
+		Wayland & 1.18.0-2~exp1.1   & Graphical Interface Protocol (modern) \\ 
+		Xorg & 1:7.7+22 & X.Org X Window System \\
+		systemd & 247.3-5 & system and service manager\\
+		Ext4 & n/a & Default file system
+		% X.Org [11] & 1.20.9 & Older than Wayland, but more stable \\
+		%\bottomrule
+	\end{tabular}
+	\end{latin}
+	\caption{بررسی فنی}
+\end{table}
+\end{block}
+\end{frame}
+\end{persian}
+
+%------------------------------------------------
+%\subsection{Supported Architectures}
+
+\begin{persian}
+\begin{frame}{معماری‌های پشتیبانی شدهٔ پردازنده}
+\footnotesize{
+دبیان یک توزیع دودوئی است که از بیشترین شمار معماری‌های دستورالعمل پشتیبانی می‌کند.
+
+\begin{block}{معماری‌های پشتیبانی شدهٔ پردازنده}
+	\begin{itemize}
+		\begin{latin}
+		\begin{multicols}{2}
+			\item 32-bit PC (i386) and 64-bit PC (amd64)
+			\item 64-bit ARM (arm64)
+			\item ARM EABI (armel)
+			\item ARMv7 (EABI hard-float ABI, armhf)
+			\item little-endian MIPS (mipsel)
+			\item 64-bit little-endian MIPS (mips64el)
+			\item 64-bit little-endian PowerPC (ppc64el)
+			\item IBM System z (s390x)  
+		\end{multicols}
+		\end{latin}
+	\end{itemize}
+\end{block}
+\textsf{Based on the Release Notes [9]}
+}
+\end{frame}
+\end{persian}
+
+%------------------------------------------------
+%\subsection{Localization}
+
+\begin{persian}
+\begin{frame}{محلی سازی}
+\begin{block}{محلی سازی}
+
+\textsf{از ماه مه سال ۲۰۱۹}
+\begin{itemize}
+\item 
+۷۸ زبان در این انتشار پشتیبانی می‌شود.
+
+\end{itemize}
+
+%this url won't be in the final presentation, post Buster release this url should be that of a localization page.
+\end{block}
+\begin{block}{برگردان‌های گنوم}
+گنوم ۳.۳۰ در بیش از ۳۷ زبان و با حداقل ۸۰٪ ترجمه دردسترس است.
+همچنین قسمتی از ترجمه‌‌های (ناکامل) در شمار زیادی از زبان‌ها (مجموعا ۱۳۳) در دسترس هستند.
+
+\end{block}
+
+\end{frame}
+
+\end{persian}
+
+%------------------------------------------------
+
+\begin{persian}
+\section{برنامه‌ها}
+\begin{frame}{برنامه‌ها}
+\begin{block}{}
+برنامه‌ها
+\end{block}
+\end{frame}
+\end{persian}
+%------------------------------------------------
+%\section{Applications}
+%\subsection{Console applications}
+\begin{persian}
+\begin{frame}{برنامه‌های کنسول}
+\begin{block}{برنامه‌های کنسول}
+\begin{latin}
+\begin{tabular}{ll} 
+Bash & 5.1-2 \\
+Emacs & 27.1 \\
+Vim & 8.2  \\
+nano & 5.4-2 \\
+gedit &   3.38.1-1 \\
+GCC &  1.190 \\
+git & 1:2.30.2-1 \\
+\end{tabular}
+\end{latin}
+\end{block}
+\end{frame}
+\end{persian}
+%------------------------------------------------
+\begin{persian}
+%\subsection{Graphical applications}
+\begin{frame}{برنامه‌های گرافیکی}
+\begin{block}{برنامه‌های گرافیکی}
+
+\begin{latin}
+\begin{tabular}{ll} 
+
+Emacs & 27.1 \\
+LibreOffice & 7.0 \\
+Python 3 & 3.9.1 \\
+Gimp & 2.10.22 \\
+TeXStudio & 3.0.4+ds-1 \\
+TeXlive & 2020.20210202-3 \\
+Thunderbird & 1:78.10.0-1 \\
+Firefox & 88.0.1-1 \\
+\end{tabular}
+\end{latin}
+
+\end{block}
+\end{frame}
+\end{persian}
+%------------------------------------------------
+%\subsection{Desktop Environments}
+\begin{persian}
+\begin{frame}{محیط‌های میزکار}
+\begin{block}{محیط‌های میزکار}
+\begin{latin}
+\begin{tabular}{ll} 
+\textbf{Desktop} & \textbf{Version} \\
+GNOME ( default ) & 3.38 \\
+KDE Plasma & 5.20 \\
+LXDE & 11 \\
+LXQt & 0.16 \\
+MATE & 1.24 \\
+Xfce & 4.16 \\
+\end{tabular}
+\end{latin}
+
+\end{block}
+\end{frame}
+%--------------------------------
+\end{persian}
+
+\begin{persian}
+%\subsection{Package Management}
+\begin{frame}{مدیریت بسته}
+\begin{block}{ابزار پیشرفته بسته}
+\vspace{0.5cm}
+
+\begin{latin}
+\begin{tabular}{lll} 
+\textbf{Tool} & \textbf{Description} & \textbf{Version} \\
+apt & command-line tool (universal) & 2.2.3 \\
+aptitude & text-based interface & 0.8.13-3 \\
+synaptic & Graphical front end for apt & 0.90.2 \\ 
+\end{tabular}
+\end{latin}
+
+
+% \item Gnome-packagekit - GNOME's front end for APT.
+
+\end{block}
+\end{frame}
+\end{persian}
+
+%--------------------------------
+\begin{persian}
+%\subsection{Bootloaders}
+\begin{frame}{بارکننده‌های راه‌اندازی}
+\begin{block}{بارکننده‌های راه‌اندازی}
+\vspace{0.5cm}
+
+
+\begin{latin}
+\begin{tabular}{lll} 
+\textbf{Tool} & \textbf{Description} & \textbf{Version} \\
+Grub2 & Bootloader & 2.04-17 \\
+Grub & Bootloader & 0.97-77 \\
+Lilo & Bootloader (old) & not in Bullseye \\
+\end{tabular}
+\end{latin}
+% \item Gnome-packagekit - GNOME's front end for APT.
+
+\end{block}
+\end{frame}
+\end{persian}
+%------------------------------------------------
+\begin{persian}
+\begin{frame}{دریافت دبیان}
+\begin{block}{دریافت دبیان}
+دریافت دبیان
+\end{block}
+\end{frame}
+\end{persian}
+%------------------------------------------------
+%\section{Installing and Using Debian}
+\begin{persian}
+\section{}
+\begin{frame}{دریافت دبیان}
+\begin{block}{دریافت دبیان}
+\begin{itemize}
+\item 
+نصب: تصاویر iso که می‌شود روی فلش USB یا رسانه تصویری (CD/DVD) استفاده کرد.
+
+\item 
+دریافت تصویر: https، تورنت، ftp و سایر روش‌ها
+    
+\item 
+دبیان زنده: نسخه زنده دبیان، که برای نصب نیز استفاده می‌شود.
+
+\item 
+تصویر ابری: در ارائه کننده‌های ابری استفاده می‌شود.
+
+\item
+پیش‌نصب شده: دبیان روی برخی از رایانه‌ها از پیش نصب شده است.
+
+\end{itemize}
+\end{block}
+\end{frame}
+\end{persian}
+
+%------------------------------------------------
+\begin{persian}
+\section{کمک و مطالعهٔ بیشتر}
+\begin{frame}{کمک و مطالعهٔ بیشتر}
+\begin{block}{مظالعهٔ بیشتر}
+این بخش موارد زیر را پوشش می‌دهد:
+	\begin{itemize}
+		\item 
+دریافت کمک
+		\item 
+کاربران نهایی دبیان
+		\item 
+توسعه دهنده‌های دبیان		
+		\item 
+مراجع گنوم
+	\end{itemize}
+\end{block}
+\end{frame}
+\end{persian}
+
+%------------------------------------------------
+%\subsection{Getting Help}
+\begin{persian}
+\begin{frame}{دریافت کمک}
+
+می‌توانید از جاهای مختلفی کمک بگیرید
+
+\begin{block}{دریافت کمک}
+\begin{itemize}
+	\item
+مشترک شدن در فهرست‌های پستی کاربران	
+	\item 
+به IRC روی OFTC بپیوندید	
+	\item 
+به لاگ‌های محلی بپیوندید	
+	\item 
+آموزش‌های ویدیویی
+	\item 
+کتاب‌های چاپی	
+	\item 
+کتاب‌های الکترونیکی، آموزش‌های how-to	
+	\item 
+تیم دانشگاهی دبیان	 
+\end{itemize}
+\end{block}
+موتورهای جستجو در این‌جا(و همه جا) دوست شما خواهند بود. ت
+
+\end{frame}
+\end{persian}
+
+%------------------------------------------------
+%\section{Further reading}
+%\subsection{Debian end user}
+
+\begin{persian}
+
+\begin{frame}{کاربر نهایی دبیان}
+%\textsf{References}
+\begin{block}{کاربر نهایی دبیان}
+\begin{latin}
+
+\footnotesize{
+
+\begin{enumerate}
+	\normalsize\raggedleft
+	\setlength{\itemsep}{-.1em}
+	%\item \url{https://www.gnu.org}
+	\item \url{https://www.debian.org}
+	\item  \url{https://www.debian.org/intro/}
+	\item \url{https://www.debian.org/social_contract}
+	\item \url{https://wiki.debian.org/DebianBullseye}
+	\item \url{https://www.debian.org/doc/user-manuals}
+	\item \url{https://debian-handbook.info/}
+	\item \url{https://lists.debian.org/debian-user/}
+	\item \url{https://wiki.debian.org/IRC}
+	\item \url{https://www.oftc.net/}
+	\item \url{https://www.debian.org/releases/}
+	\item \url{https://wiki.debian.org/LTS}
+\end{enumerate}
+}
+\end{latin}
+
+\end{block}
+\end{frame}
+
+\end{persian}
+
+%------------------------------------------------
+%\section{Further reading 2}
+%\subsection{Debian Developer}
+\begin{persian}
+\begin{frame}{توسعه دهنده‌های دبیان و کاربران حرفه‌ای}
+%\textsf{References}
+\begin{block}{توسعه دهنده‌های دبیان و کاربران حرفه‌ای}
+
+\begin{latin}
+\footnotesize{
+\begin{enumerate}
+\setlength{\itemsep}{-.1em}
+\normalsize\raggedleft
+
+\item \url{https://www.debian.org/releases/testing/}
+\item \url{https://www.debian.org/distrib/}
+\item \url{https://tracker.debian.org/}
+\item \url{https://www.debian.org/devel/debian-installer/}
+\item \url{https://wiki.debian.org/FileSystem}
+\item \url{https://www.kernel.org/doc/Documentation/filesystems/}
+\item \url{https://debconf21.debconf.org/}
+\item \url{https://salsa.debian.org/elbrus/bullseyepresentation}
+\end{enumerate}
+}
+
+\end{latin}
+
+\end{block}
+\end{frame}
+\end{persian}
+
+%------------------------------------------------
+%\section{Further reading 3}
+%\subsection{GNOME References}
+\begin{persian}
+\begin{frame}{مراجع گنوم}
+%\textsf{References}
+\begin{block}{مراجع گنوم}
+\begin{latin}
+
+\footnotesize{
+\begin{enumerate}
+\normalsize\raggedleft
+\setlength{\itemsep}{-.1em}
+\item \url{https://help.gnome.org/misc/release-notes/3.38/}
+\item \url{https://wiki.gnome.org/TranslationProject}
+\end{enumerate}
+}
+\end{latin}
+
+\end{block}
+\end{frame}
+\end{persian}
+
+%------------------------------------------------
+
+\begin{persian}
+\section{نتیجه‌گیری و اعتبار}
+\begin{frame}{نتیجه‌گیری و اعتبار}
+\begin{block}{نتیجه‌گیری و اعتبار}
+نتیجه‌گیری و اعتبار
+\end{block}
+\end{frame}
+\end{persian}
+%------------------------------------------------
+%\subsection{Contributors to this presentation}
+\begin{persian}
+\begin{frame}{مشارکت کنندگان در این ارائه}
+\begin{block}{مشارکت کنندگان در این ارائه}
+	\footnotesize{
+		\begin{table}
+			\begin{tabular}{l l l}			
+				\toprule
+				\textbf{نام} & \multicolumn{2}{c}{\textbf{راه ارتباطی}} \\
+				\midrule
+				\normalsize\raggedleft
+				Paul Sutton & zleap@disroot.org &  \\
+				Francisco M Neto & fmneto@fmneto.com.br & ~\\
+				Allan Nordhøy & comradekingu (irc) & \\
+				DebianAcademy mailing list & 
+				
+				\multicolumn{2}{l}{\url{debian-academy@lists.debian.org}} \\
+				%Debian publicity mailing list & \multicolumn{2}{l}{\url{debian-publicity@lists.debian.org}}  \\
+				\#debian-publicity irc channel & \multicolumn{2}{l}{\url{irc://irc.oftc.net/debian-publicity}} \\
+				\#debian-next irc channel & \multicolumn{2}{l}{\url{irc://irc.oftc.net/debian-next}} \\
+				\#debconf-team irc channel & \multicolumn{2}{l}{\url{irc://irc.oftc.net/debconf-team}} \\
+				\bottomrule
+			\end{tabular}
+			\caption{مشارکت کنندگان}
+		\end{table}
+	}
+
+\end{block}
+\end{frame}
+\end{persian}
+
+%------
+%------------------------------------------------
+%\subsection{Credits}
+\begin{persian}
+\begin{frame}{پروانه و درباره}
+\begin{block}{پروانه و درباره}
+{\centerline{ساخته شده با}}
+{\centerline{\LaTeX \& Beamer}}
+{\centerline{\url{https://salsa.debian.org/zleap-guest/bullseyepresentation}}}
+{\centerline{Creative Commons - CC-BY-SA v4.0.}}
+\end{block}
+
+\end{frame}
+\end{persian}
+
+%------------------------------------------------
+
+\begin{persian}
+\begin{frame}
+\begin{block}
+\Huge{\centerline{پایان}}
+\Huge{\centerline{سپاس}}
+\end{block}
+\end{frame}
+\end{persian}
+%----------------------------------------------------------------------------------------
+\end{document}
